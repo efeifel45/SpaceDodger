@@ -7,7 +7,7 @@ class PlainAlien extends Alien {
     private int t = 0;
 
     public PlainAlien() {
-        color = Color.white;
+        color = Color.RED;
         x = r.nextInt(SpaceDodger.windowWidth);
         y = r.nextInt(SpaceDodger.windowHeight);
     }
@@ -15,7 +15,7 @@ class PlainAlien extends Alien {
     @Override
     public void update(Ship ship) {
         t++;
-        if (t > 100) {
+        if (t > 80) {
             visible = false;
         }
     }

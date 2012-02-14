@@ -44,7 +44,7 @@ public class SpaceDodger extends JComponent implements ActionListener, MouseList
     }
 
     public SpaceDodger() {
-        startWave(1);
+        startWave(5);
     }
 
     public void startWave(int nextWave) {
@@ -54,14 +54,57 @@ public class SpaceDodger extends JComponent implements ActionListener, MouseList
         waveMessageCounter = 30;
 
         if (wave == 1) {
-            aliens = new Alien[10];
+            aliens = new Alien[15];
             for (int i = 0; i < aliens.length; i++) {
                 aliens[i] = new PlainAlien();
             }
         }
         if (wave == 2) {
-            gameWon = true;
+            aliens = new Alien[20];
+            gameWon = false;
+            for(int i =0; i <aliens.length; i++){
+                aliens[i] = new NewAlien(); 
+            }
         }
+            if (wave == 3) {
+            aliens = new Alien[15];
+                gameWon = false;
+                for(int i =0; i <aliens.length;i++)
+                {
+                    aliens[i]= new Alien3();   
+                }      
+            }
+            
+            if (wave == 4) {
+                aliens = new Alien[18];
+                gameWon= false;
+                for(int i = 0; i < aliens.length;i++)
+                {
+                    aliens[i]= new Wave4();   
+                }      
+            }
+            
+            if (wave == 5) {
+                aliens = new Alien[18];
+                gameWon= false;
+                for(int i = 0; i < aliens.length;i++)
+                {
+                    if(i%2==0)
+                    {
+                        aliens[i] = new Wave52(); 
+                    }
+                    else 
+                    {
+                        
+                    aliens[i]= new Wave5();  
+                    }
+                }      
+            }
+                
+            if(wave==6){
+                gameWon=true; 
+            }
+          
     }
 
     @Override
